@@ -15,11 +15,7 @@ Ce dépôt contient les données et les scripts développés dans le cadre d’u
 
 
 ## 📁 Structure du dépôt
-
-- `data/` : données expérimentales brutes et traitées  
-- `notebooks/` : scripts d’analyse et de modélisation  
-- `models/` : algorithmes simulant des stratégies de prix  
-- `docs/` : compte-rendus et revue de littérature
+tout expliquer dans le rapport de stage + Presentation de fin de stage
 
 ## 🎯 Objectif
 
