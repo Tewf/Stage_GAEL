@@ -1,6 +1,6 @@
 # Projet Prolog – IA stratégique en jeu concurrentiel
 
-Ce dépôt regroupe le travail réalisé dans le cadre d’un **projet Prolog**, où l’objectif est de développer une **intelligence artificielle** capable de jouer à un jeu défini dans le fichier [`consignesProjet.pdf`](./consigneProjet.pdf). L’IA est ensuite confrontée à celles d’autres étudiants dans un tournoi.
+Ce dépôt regroupe le travail réalisé dans le cadre d’un **projet Prolog**, où l’objectif est de développer une **intelligence artificielle** capable de jouer à un jeu défini dans le fichier [`consignesProjet.pdf`](./consignesProjet.pdf). L’IA est ensuite confrontée à celles d’autres étudiants dans un tournoi.
 
 🎯 Ce projet est en lien direct avec la **thématique de mon stage** sur l’IA et les comportements stratégiques en économie. J’ai donc choisi de **combiner les deux approches** – théorique et appliquée – dans ce dépôt.
 
