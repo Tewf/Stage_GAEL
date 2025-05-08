@@ -15,7 +15,8 @@ Ce dépôt contient les données et les scripts développés dans le cadre d’u
 
 
 ## 📁 Structure du dépôt
-tout expliquer dans le rapport de stage + Presentation de fin de stage
+tout expliquer dans le rapport de stage.
+Presentation: Presentation de fin de stage(Soutenance)
 
 ## 🎯 Objectif
 
