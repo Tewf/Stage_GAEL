@@ -14,8 +14,8 @@ Ce dépôt contient les données et les scripts développés dans le cadre d’u
 **Sujet :** Étude de l’influence de l’IA sur les comportements coopératifs dans les jeux de prix, à travers des modèles théoriques et des expérimentations en laboratoire.
 
 
-## 📁 Structure du dépôt
-Stage_GAEL/
+## 📁 Structure du dépôt  
+Stage_GAEL/  
 ├── NeuronesMirroirs/   # Etudier la relation entre les neurones mirroirs et la cooperations  
 ├── Prolog/             # Pendant le semestre j'ai eu le projet de prolog qui a comme thème créer une IA dans un jeu qui est en relation avec le stage et l'etude des interactions entre IA dans des jeux  
 ├── Litterature/        # Notes et documentation de recherche  
