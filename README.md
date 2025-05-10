@@ -15,6 +15,7 @@ Ce dépôt contient les données et les scripts développés dans le cadre d’u
 
 
 ## 📁 Structure du dépôt  
+```plaintext
 Stage_GAEL/  
 ├── NeuronesMirroirs/   # Etudier la relation entre les neurones mirroirs et la cooperations  
 ├── Prolog/             # Pendant le semestre j'ai eu le projet de prolog qui a comme thème créer une IA dans un jeu qui est en relation avec le stage et l'etude des interactions entre IA dans des jeux  
@@ -22,7 +23,7 @@ Stage_GAEL/
 ├── RapportDeStage/     #Rapport de stage avec l'état de l'art  
 ├── Presentation/       #Presentation lors de la soutenance  
 └── README.md           # Ce fichier  
-
+```
 ## 🎯 Objectif
 
 Analyser si des agents IA peuvent favoriser la coopération dans des situations de concurrence répétée (type dilemme du prisonnier), en comparaison aux comportements humains.
