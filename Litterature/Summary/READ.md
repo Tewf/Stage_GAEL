@@ -12,12 +12,4 @@ Ce dossier contient des résumés des documents et articles les plus utilisés r
 Summary/
 ├── Articles/            # Résumés d'articles académiques
 └── README.md            # Ce fichier
-
-
-- Respectez l’organisation existante.
-- Fournissez des résumés clairs et concis.
-- Assurez-vous que les documents respectent les droits d’auteur.
-
 ---
-
-Si vous avez besoin d’une personnalisation supplémentaire, faites-le-moi savoir !
