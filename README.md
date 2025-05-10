@@ -16,12 +16,12 @@ Ce dépôt contient les données et les scripts développés dans le cadre d’u
 
 ## 📁 Structure du dépôt
 Stage_GAEL/
-├── NeuronesMirroirs/   # Etudier la relation entre les neurones mirroirs et la cooperations
-├── Prolog/             # Pendant le semestre j'ai eu le projet de prolog qui a comme thème créer une IA dans un jeu qui est en relation avec le stage et l'etude des interactions entre IA dans des jeux
-├── Litterature/        # Notes et documentation de recherche
-├── RapportDeStage/     #Rapport de stage avec l'état de l'art
-├── Presentation/       #Presentation lors de la soutenance
-└── README.md           # Ce fichier
+├── NeuronesMirroirs/   # Etudier la relation entre les neurones mirroirs et la cooperations  
+├── Prolog/             # Pendant le semestre j'ai eu le projet de prolog qui a comme thème créer une IA dans un jeu qui est en relation avec le stage et l'etude des interactions entre IA dans des jeux  
+├── Litterature/        # Notes et documentation de recherche  
+├── RapportDeStage/     #Rapport de stage avec l'état de l'art  
+├── Presentation/       #Presentation lors de la soutenance  
+└── README.md           # Ce fichier  
 
 ## 🎯 Objectif
 
