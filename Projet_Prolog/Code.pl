@@ -510,7 +510,7 @@ joue(stage_test, _, Coup) :-
 :- dynamic   param_khawa_khawa_prime/2.
 :- dynamic   drapeau_fausse_repet/1.
 
-%Paramètres réglables
+%ParamÃ¨tres rÃ©glables
 param_khawa_khawa_prime(avance_sure , 15).
 param_khawa_khawa_prime(retard_aggr , -20).
 param_khawa_khawa_prime(repet_min   , 2).
@@ -531,38 +531,38 @@ joue(khawa_khawa_prime, Historique, Coup) :-
     est_titfortat(Historique, EstTFT),
 
     choisir_coup(Historique, Coup,               % sortie
-                 AvanceOk, RetardMax, SeuilRep,  % paramètres
+                 AvanceOk, RetardMax, SeuilRep,  % paramÃ¨tres
                  TauxNash,                       % taux Nash
-                 Delta, DernAdv, NbRep,          % état score / répétition
+                 Delta, DernAdv, NbRep,          % Ã©tat score / rÃ©pÃ©tition
                  Bascule, H, EstTFT).            % autres infos
 
-% Sélection du coup – cascade de clauses
+% SÃ©lection du coup Â– cascade de clauses
 choisir_coup(_, Coup, _Av,_Rg,SeuilRep,_Tn,_Dlt,DernAdv,NbRep,_Bas,_H,_TFT) :-
     NbRep >= SeuilRep, !,
-    Coup is ((DernAdv+4) mod 5)+1.                          % contre répétition
+    Coup is ((DernAdv+4) mod 5)+1.                          % contre rÃ©pÃ©tition
 
 choisir_coup(_, Coup, AvanceOk,_Rg,_SRep,_Tn,Delta,DernAdv,_Nr,_Bas,_H,_TFT) :-
     Delta >= AvanceOk, !,
-    coup_securise(DernAdv, Coup).                           % sécuriser avance
+    coup_securise(DernAdv, Coup).                           % sÃ©curiser avance
 
 choisir_coup(_, Coup,_Av,_Rg,_SRep,Tn,_Dlt,_Da,_NbRep,true,_H,_TFT) :- !,
     coup_nash(Tn*2, Coup).                                  % adversaire instable
 
 choisir_coup(_, Coup,_Av,_Rg,_SRep,Tn,_Dlt,_Da,_NbRep,false,H,_TFT) :-
     H > 1.8, !,
-    coup_nash(Tn, Coup).                                    % jeu trop aléatoire
+    coup_nash(Tn, Coup).                                    % jeu trop alÃ©atoire
 
 choisir_coup(Hist, Coup,_Av,RetardMax,_SRep,_Tn,Delta,_Da,_NbRep,false,_H,_TFT) :-
     Delta =< RetardMax, !,
-    coup_agressif(Hist, Coup).                              % tenter piège
+    coup_agressif(Hist, Coup).                              % tenter piÃ¨ge
 
 choisir_coup(_, Coup,_Av,_Rg,_SRep,_Tn,_Dlt,DernAdv,_NbRep,false,_H,true) :- !,
     casser_miroir(DernAdv, Coup).                           % casser TFT
 
 choisir_coup(Hist, Coup, _Av,_Rg,_SRep,_Tn,_Dlt,_Da,_NbRep,_Bas,_H,_TFT) :-
-    coup_adaptatif(Hist, Coup).                             % défaut
+    coup_adaptatif(Hist, Coup).                             % dÃ©faut
 
-%Paramètres courants
+%ParamÃ¨tres courants
 parametres(Av,Rg,Rp,Tn,Sw) :-
     param_khawa_khawa_prime(avance_sure , Av),
     param_khawa_khawa_prime(retard_aggr , Rg),
@@ -570,7 +570,7 @@ parametres(Av,Rg,Rp,Tn,Sw) :-
     param_khawa_khawa_prime(taux_nash   , Tn),
     param_khawa_khawa_prime(var_switch  , Sw).
 
-%Score cumulé
+%Score cumulÃ©
 etat_score(Hist, Delta) :-
     foldl(delta_tour, Hist, 0, Delta).
 
@@ -579,7 +579,7 @@ delta_tour([Moi,Adv], Acc, Suivant) :-
     ; abs(Moi-Adv)=:=1, Moi>Adv -> Suivant is Acc-1
     ; Suivant = Acc).
 
-% Répétitions adverses
+% RÃ©pÃ©titions adverses
 repetition_adv([], _, 0).
 repetition_adv([[_,Adv]|Reste], Adv, Nb) :-
     compte_rep(Adv, Reste, 1, Nb).
@@ -619,7 +619,7 @@ est_titfortat([[_,AdvAct],[MoiPrec,_]|_], true) :-
     AdvAct =:= MoiPrec, !.
 est_titfortat(_, false).
 
-%Coups spécialisés
+%Coups spÃ©cialisÃ©s
 coup_securise(3, Coup) :- random_member(Coup,[1,5]), !.
 coup_securise(_, Coup) :- random_member(Coup,[2,4]).
 
@@ -641,7 +641,7 @@ casser_miroir(Adv, Coup) :-
     Tmp is (Adv+2) mod 5,
     (Tmp=:=0 -> Coup=5 ; Coup=Tmp).
 
-%Stratégie adaptative
+%StratÃ©gie adaptative
 coup_adaptatif(Hist, Coup) :-
     distr_markov(Hist,3,Dm),
     distr_bayes(Hist,Db),
@@ -673,7 +673,7 @@ hist_decroissant([[_,A]|T],L,W,Acc,Out) :-
     W1 is W*L,
     hist_decroissant(T,L,W1,[A-W|Acc],Out).
 
-%Mélange linéaire
+%MÃ©lange linÃ©aire
 melange([W1,W2,W3],[D1,D2,D3],Mix) :-
     findall(M-P,(between(1,5,M),
                  membre(M,P1,D1), membre(M,P2,D2), membre(M,P3,D3),
@@ -682,7 +682,7 @@ melange([W1,W2,W3],[D1,D2,D3],Mix) :-
 membre(M,P,Dist) :- member(M-P,Dist), !.
 membre(_,0,_).
 
-%Coup à meilleure espérance
+%Coup Ã  meilleure espÃ©rance
 meilleur_coup(Dist, Coup) :-
     findall(Esp-C,(between(1,5,C), esp_gain(C,Dist,Esp)),Lst),
     keysort(Lst,Tri), reverse(Tri,[_-Coup|_]).
@@ -697,7 +697,7 @@ gain(Moi,Adv,G) :-
     ; Diff=:=1           -> G = 0
     ;                       G = Moi).
 
-%Comptage et probabilités
+%Comptage et probabilitÃ©s
 compte_coups(Liste,Comptes) :-
     findall(M-0,between(1,5,M),Init),
     foldl(compte_mvt, Liste, Init, Comptes).
@@ -715,7 +715,7 @@ total_compte(Cs,T) :- findall(C,member(_-C,Cs),Ls), sum_list(Ls,T).
 probabilite(0,M-_,M-0) :- !.
 probabilite(T,M-C,M-P) :- P is C/T.
 
-% Fusion des comptes pondérés (A-Poids) vers table final
+% Fusion des comptes pondÃ©rÃ©s (A-Poids) vers table final
 fusion_comptes(L,CsOut) :-
     findall(M-0,between(1,5,M),Init),
     foldl(ajout_poids, L, Init, CsOut).
